@@ -1,18 +1,18 @@
 defmodule GenQueueTaskBunny.MixProject do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.0.1"
 
   def project do
     [
-      app: :gen_queue_task_bunny,
+      app: :carguero_gen_queue_task_bunny,
       version: @version,
-      elixir: "~> 1.6",
+      elixir: "~> 1.7.4",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: description(),
       package: package(),
-      name: "GenQueue TaskBunny",
+      name: "Carguero GenQueue TaskBunny",
       docs: docs()
     ]
   end
@@ -32,11 +32,12 @@ defmodule GenQueueTaskBunny.MixProject do
 
   defp package do
     [
+      name: :carguero_gen_queue_task_bunny,
       files: ["lib", "mix.exs", "README*"],
-      maintainers: ["Nicholas Sweeting"],
+      maintainers: ["Nicholas Sweeting", "CARGUERO team"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/nsweeting/gen_queue_task_bunny",
+        "GitHub" => "https://github.com/carguero/carguero_gen_queue_task_bunny",
         "GenQueue" => "https://github.com/nsweeting/gen_queue"
       }
     ]
@@ -46,16 +47,16 @@ defmodule GenQueueTaskBunny.MixProject do
     [
       extras: ["README.md"],
       main: "readme",
-      source_url: "https://github.com/nsweeting/gen_queue_task_bunny"
+      source_url: "https://github.com/carguero/carguero_gen_queue_task_bunny"
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:gen_queue, "~> 0.1.5"},
-      {:task_bunny, "~> 0.3.1", runtime: false},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:gen_queue, "~> 0.1.8"},
+      {:carguero_task_bunny, "~> 0.0.1", runtime: false},
+      {:ex_doc, ">= 0.23.0", only: :dev}
     ]
   end
 end

@@ -26,7 +26,7 @@ defmodule GenQueue.Adapters.TaskBunny do
     handle_job(gen_queue, %{job | args: [%{}]})
   end
 
-  def handle_job(gen_queue, %GenQueue.Job{args: [arg]} = job) do
+  def handle_job(_gen_queue, %GenQueue.Job{args: [arg]} = job) do
     case TaskBunny.Job.enqueue(job.module, arg, build_options(job)) do
       :ok -> {:ok, job}
       error -> error
