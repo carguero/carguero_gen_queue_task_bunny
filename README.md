@@ -1,25 +1,26 @@
 # GenQueue TaskBunny
-[![Build Status](https://travis-ci.org/nsweeting/gen_queue_task_bunny.svg?branch=master)](https://travis-ci.org/nsweeting/gen_queue_task_bunny)
-[![GenQueue Exq Version](https://img.shields.io/hexpm/v/gen_queue_task_bunny.svg)](https://hex.pm/packages/gen_queue_task_bunny)
+[![Build Status](https://travis-ci.org/nsweeting/carguero_gen_queue_task_bunny.svg?branch=master)](https://travis-ci.org/nsweeting/carguero_gen_queue_task_bunny)
+[![GenQueue Exq Version](https://img.shields.io/hexpm/v/carguero_gen_queue_task_bunny.svg)](https://hex.pm/packages/carguero_gen_queue_task_bunny)
 
+This is Carguero's internal updating of GenQueueTaskBunny, all credit due to the original devs.
 This is an adapter for [GenQueue](https://github.com/nsweeting/gen_queue) to enable
 functionaility with [TaskBunny](https://github.com/shinyscorpion/task_bunny).
 
 ## Installation
 
-The package can be installed by adding `gen_queue_task_bunny` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `carguero_gen_queue_task_bunny` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:gen_queue_task_bunny, "~> 0.1.1"}
+    {:carguero_gen_queue_task_bunny, "~> 0.1.1"}
   ]
 end
 ```
 
 ## Documentation
 
-See [HexDocs](https://hexdocs.pm/gen_queue_task_bunny) for additional documentation.
+See [HexDocs](https://hexdocs.pm/carguero_gen_queue_task_bunny) for additional documentation.
 
 ## Configuration
 
@@ -48,7 +49,7 @@ config :my_app, Enqueuer, [
 
 ## Starting Enqueuers
 
-By default, `gen_queue_task_bunny` does not start TaskBunny on application start. So we must add
+By default, `carguero_gen_queue_task_bunny` does not start TaskBunny on application start. So we must add
 our new `Enqueuer` module to our supervision tree.
 
 ```elixir
