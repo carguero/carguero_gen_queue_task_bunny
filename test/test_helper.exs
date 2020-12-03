@@ -16,5 +16,6 @@ defmodule GenQueue.TaskBunnyTestHelpers do
 end
 
 Application.put_env(:ex_unit, :assert_receive_timeout, 10_000)
+Application.ensure_all_started(:amqp)
 
 ExUnit.start()
