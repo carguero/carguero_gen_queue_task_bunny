@@ -4,9 +4,9 @@ defmodule GenQueue.Adapters.TaskBunnyMockTest do
   import GenQueue.Test
 
   defmodule Enqueuer do
-    Application.put_env(:gen_queue_task_bunny, __MODULE__, adapter: GenQueue.Adapters.MockJob)
+    Application.put_env(:carguero_gen_queue_task_bunny, __MODULE__, adapter: GenQueue.Adapters.MockJob)
 
-    use GenQueue, otp_app: :gen_queue_task_bunny
+    use GenQueue, otp_app: :carguero_gen_queue_task_bunny
   end
 
   setup do

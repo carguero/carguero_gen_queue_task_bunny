@@ -6,7 +6,7 @@ defmodule GenQueue.Adapters.TaskBunny do
   use GenQueue.JobAdapter
 
   def start_link(_gen_queue, _opts) do
-    TaskBunny.Supervisor.start_link()
+    CargueroTaskBunny.Supervisor.start_link()
   end
 
   @doc """
@@ -27,7 +27,7 @@ defmodule GenQueue.Adapters.TaskBunny do
   end
 
   def handle_job(_gen_queue, %GenQueue.Job{args: [arg]} = job) do
-    case TaskBunny.Job.enqueue(job.module, arg, build_options(job)) do
+    case CargueroTaskBunny.Job.enqueue(job.module, arg, build_options(job)) do
       :ok -> {:ok, job}
       error -> error
     end

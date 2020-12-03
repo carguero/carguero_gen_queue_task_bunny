@@ -1,4 +1,4 @@
-defmodule GenQueueTaskBunny.MixProject do
+defmodule CargueroGenQueueTaskBunny.MixProject do
   use Mix.Project
 
   @version "0.0.1"
@@ -37,7 +37,7 @@ defmodule GenQueueTaskBunny.MixProject do
       maintainers: ["Nicholas Sweeting", "CARGUERO team"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/carguero/carguero_gen_queue_task_bunny",
+        "GitHub" => "https://github.com/carguero/carguero_carguero_gen_queue_task_bunny",
         "GenQueue" => "https://github.com/nsweeting/gen_queue"
       }
     ]
@@ -47,7 +47,7 @@ defmodule GenQueueTaskBunny.MixProject do
     [
       extras: ["README.md"],
       main: "readme",
-      source_url: "https://github.com/carguero/carguero_gen_queue_task_bunny"
+      source_url: "https://github.com/carguero/carguero_carguero_gen_queue_task_bunny"
     ]
   end
 
@@ -55,7 +55,7 @@ defmodule GenQueueTaskBunny.MixProject do
   defp deps do
     [
       {:gen_queue, "~> 0.1.8"},
-      {:carguero_task_bunny, "~> 0.0.1", runtime: false},
+      {:carguero_task_bunny, "~> 0.0.4", runtime: false},
       {:ex_doc, ">= 0.23.0", only: :dev}
     ]
   end

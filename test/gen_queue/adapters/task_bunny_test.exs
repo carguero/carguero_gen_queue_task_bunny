@@ -4,23 +4,23 @@ defmodule GenQueue.Adapters.TaskBunnyTest do
   import GenQueue.Test
   import GenQueue.TaskBunnyTestHelpers
 
-  Application.put_env(:task_bunny, :hosts, [
-    default: [connect_options: "amqp://localhost"]
-  ])
+  Application.put_env(:carguero_task_bunny, :hosts, default: [connect_options: "amqp://localhost"])
 
-  Application.put_env(:task_bunny, :queue, [
+  Application.put_env(:carguero_task_bunny, :queue,
     namespace: "task_bunny.",
     queues: [[name: "normal", jobs: :default]]
-  ])
+  )
 
   defmodule Enqueuer do
-    Application.put_env(:gen_queue_task_bunny, __MODULE__, adapter: GenQueue.Adapters.TaskBunny)
+    Application.put_env(:carguero_gen_queue_task_bunny, __MODULE__,
+      adapter: GenQueue.Adapters.TaskBunny
+    )
 
-    use GenQueue, otp_app: :gen_queue_task_bunny
+    use GenQueue, otp_app: :carguero_gen_queue_task_bunny
   end
 
   defmodule Job do
-    use TaskBunny.Job
+    use CargueroTaskBunny.Job
 
     def perform(arg1) do
       send_item(Enqueuer, {:performed, arg1})
